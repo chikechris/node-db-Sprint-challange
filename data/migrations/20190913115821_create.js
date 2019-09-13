@@ -3,7 +3,7 @@ exports.up = function (knex) {
     .createTable('projects', tbl => {
       tbl.increments()
       tbl.string('project_name', 300).notNullable()
-      tbl.text('project_description')
+      tbl.text('description')
       tbl.boolean('completed').defaultTo(false)
     })
     .createTable('resources', tbl => {
@@ -40,4 +40,3 @@ exports.down = function (knex) {
     .dropTableIfExists('resources')
     .dropTableIfExists('projects')
 }
-
