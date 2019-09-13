@@ -1,3 +1,4 @@
+  
 // Update with your config settings.
 
 module.exports = {
@@ -5,7 +6,7 @@ module.exports = {
     client: 'sqlite3',
     useNullAsDefault: true,
     connection: {
-      filename: './todo-list.db3'
+      filename: './data/todo-list.db3'
     },
     migrations: {
       directory: './data/migrations'
@@ -21,4 +22,5 @@ module.exports = {
     }
   }
 }
+
 
