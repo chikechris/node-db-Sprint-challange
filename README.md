@@ -39,12 +39,15 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
+ The Relational Databases is the system, and SQL is the language used to interact with the system.
 
 - [ ] Why do tables need a `primary key`?
+The role of a Primary Key  is to provide a unique identifier to each row in a table. That is why it cannot be null. The Primary key is mandatory in order to define a Foreign Key  relationship between a child table and a parent table.
 
 - [ ] What is the name given to a table column that references the primary key on another table.
-
+These columns are call foreign keys or rather foreign key columns.
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+We have to confirm that both tables can reference particular records of each other's table multiple times. And second, once this is confirmed, you will have to create an intermediary table that references both many to many table's ids as foreign keys.
 
 ## Minimum Viable Product
 
