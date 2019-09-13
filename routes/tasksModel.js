@@ -9,7 +9,7 @@ function getTasks () {
       't.completed',
       't.notes',
       'p.project_name',
-      'p.project_description'
+      'p.description'
     )
 }
 
@@ -23,7 +23,7 @@ function getTasksByProjectId (project_id) {
       'tasks.completed',
       'tasks.notes',
       'projects.project_name',
-      'projects.project_description'
+      'projects.description'
     )
 }
 
@@ -32,4 +32,3 @@ function postTask (taskPost) {
 }
 
 module.exports = { getTasks, getTasksByProjectId, postTask }
-
