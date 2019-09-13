@@ -6,8 +6,16 @@ const router = express.Router()
 router.get('/', (req, res) => {
   tasksDb
     .getTasks()
-    .then(results => {
-      res.status(200).json(results)
+    .then(resps => {
+      const newResps = resps.map(resp => {
+        if (resp.completed === null || resp.completed === 0) {
+          return { ...resp, completed: false }
+        } else {
+          return { ...resp, completed: true }
+        }
+      })
+
+      res.status(200).json(newResps)
     })
     .catch(error => {
       res.status(500).json(error)
@@ -17,8 +25,16 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   tasksDb
     .getTasksByProjectId(req.params.id)
-    .then(results => {
-      res.status(200).json(results)
+    .then(resps => {
+      const newResps = resps.map(resp => {
+        if (resp.completed === null || resp.completed === 0) {
+          return { ...resp, completed: false }
+        } else {
+          return { ...resp, completed: true }
+        }
+      })
+
+      res.status(200).json(newResps)
     })
     .catch(error => {
       res.status(500).json(error)
@@ -31,8 +47,8 @@ router.post('/:id', (req, res) => {
   console.log(taskPost)
   tasksDb
     .postTask(taskPost)
-    .then(results => {
-      res.status(200).json(results)
+    .then(resps => {
+      res.status(200).json(resps)
     })
     .then(error => {
       res.status(500).json(error)
